@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshers Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #003d82;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .job {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+        }
+        .job:last-child {
+            border-bottom: none;
+        }
+        .job h3 {
+            margin: 0;
+            color: #007bff;
+        }
+        .job p {
+            margin: 0.5rem 0;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Freshers Hub</h1>
+        <p>Your gateway to freshers' job opportunities!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <div class="search-bar">
+                <input type="text" id="jobSearch" placeholder="Search for jobs (e.g., Developer, Chennai)..." onkeyup="searchJobs()">
+            </div>
+            <div id="jobList">
+                <div class="job">
+                    <h3>Hiring Freshers in Prime, Digital, Ninja</h3>
+                    <a href="https://nextstep.tcs.com/campus/#/">Visit TCS NextStep Portal</a>
+                    <p>Company: TCS</p>
+                    <p>Location: Chennai</p>
+                    <p>Qualification: B.Tech/BE in any stream</p>
+                </div>
+                <div class="job">
+                    <h3>Software Engineer Associate</h3>
+                    <a href="https://careers.cognizant.com/india-en/jobs/00062441701/software-engineer-associate/">Visit Cognizant Careers</a>
+                    <p>Company: Cognizant</p>
+                    <p>Location: Chennai</p>
+                    <p>Qualification: Any Degree</p>
+                </div>
+                <div class="job">
+                    <h3>Technician Component Engineer</h3>
+                    <a href="https://flextronics.wd1.myworkdayjobs.com/en-US/Careers/details/Technician---Component-Engineering_WD196718-1?Location_Country=c4f78be1a8f14da0ab49ce1162348a5">Visit Flex Careers</a>
+                    <p>Company: FLEX</p>
+                    <p>Location: Coimbatore</p>
+                    <p>Qualification:  B.E EEE/MECH/ECE OR B.SC PHYSICS</p>
+                </div>
+                <div class="job">
+                    <h3>Data Scientist</h3>
+                    <a href="https://careers.caterpillar.com/en/jobs/job/r0000293627-data-scientist/">Visit caterpillar Careers</a>
+                    <p>Company:Caterpillar</p>
+                    <p>Location: Multiple Location</p>
+                    <p>Qualification:B.E/B.TECH</p>
+                </div>
+                <div class="job">
+                    <h3>Technical staff/ Non Technical staff </h3>
+                    <a href="https://kcgcollege.ac.in/academic-support/careers/">Visit KCGcollege Careers</a>
+                    <p>Company:KCG College</p>
+                    <p>Location: chennai</p>
+                    <p>Qualification:As per Applicable Position</p>
+                </div>
+                <div class="job">
+                    <h3>Multiple Tech Roles</h3>
+                    <a href="https://careers.yash.com/search?q=&locationsearch=">Visit yash Careers</a>
+                    <p>Company: Omega HealthCare</p>
+                    <p>Location: chennai</p>
+                    <p>Qualification: B.E/B.Tech</p>
+                </div>
+                <div class="job">
+                    <h3>Process Associate</h3>
+                    <a href="https://careers.wipro.com/job/Chennai-Test-Engineer-600119/1139993455/">Visit wipro Careers</a>
+                    <p>Company:  Wipro</p>
+                    <p>Location: Chennai</p>
+                    <p>Qualification: Any Degree must have testing knowledge and agile methodologies</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to helping fresh graduates find their dream jobs. Our platform connects you with companies looking for young and energetic talent.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: fresher@gmail.com</p>
+            <p>Phone: 9360637547</p>
+        </section>
+    </div>
+
+    <script>
+        function searchJobs() {
+            let input = document.getElementById("jobSearch").value.toLowerCase();
+            let jobs = document.querySelectorAll(".job");
+            jobs.forEach(job => {
+                let text = job.textContent.toLowerCase();
+                job.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
